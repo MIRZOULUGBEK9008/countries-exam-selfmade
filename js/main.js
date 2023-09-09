@@ -1,3 +1,8 @@
 // ? Loader
 import setLoader from "./loader.js";
-document.addEventListener("DOMContentLoaded", () => setLoader(false));
+import "./theme.js";
+document.addEventListener("DOMContentLoaded", () => {
+  setLoader(false);
+  const theme = localStorage.getItem("theme");
+  document.body.classList.add(theme ? theme : "");
+});
